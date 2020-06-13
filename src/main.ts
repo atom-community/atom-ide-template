@@ -19,7 +19,10 @@ export function activate(state: any) {
  * install Atom package dependencies if not already loaded
  */
 async function package_deps() {
-  if (!atom.packages.isPackageLoaded("atom-ide-markdown-service")) {
+  // Add entries from package-deps here manually
+  // (to prevent loading atom-package-deps and package.json when the deps are already loaded)
+  const deps: string[] = []
+  if (!deps.some(p => atom.packages.isPackageLoaded(p))) {
     await import("atom-package-deps").then((atom_package_deps) => {
       atom_package_deps.install("atom-ide-template");
     });

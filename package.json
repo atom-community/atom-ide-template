@@ -62,5 +62,6 @@
   },
   "providedServices": {},
   "consumedServices": {},
-  "package-deps": {}
+  "package-deps": [
+  ]
 }

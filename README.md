@@ -1,5 +1,9 @@
 # atom-ide-template
 
+This is a template for atom-ide-community packages using TypeScript.
+
+Use `Ctrl+Shift+F` and replace `atom-ide-template` with `atom-ide-packagename`.
+
 ![Build Status (Github Actions)](https://github.com/atom-ide-community/atom-ide-template/workflows/CI/badge.svg)
 [![Dependency Status](https://david-dm.org/atom-ide-community/atom-ide-template.svg)](https://david-dm.org/atom-ide-community/atom-ide-template)
 [![apm](https://img.shields.io/apm/dm/atom-ide-template.svg)](https://github.com/atom-ide-community/atom-ide-template)

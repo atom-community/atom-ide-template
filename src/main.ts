@@ -21,8 +21,8 @@ export function activate(state: any) {
 async function package_deps() {
   // Add entries from package-deps here manually
   // (to prevent loading atom-package-deps and package.json when the deps are already loaded)
-  const deps: string[] = []
-  if (!deps.some(p => atom.packages.isPackageLoaded(p))) {
+  const deps: string[] = [];
+  if (!deps.some((p) => atom.packages.isPackageLoaded(p))) {
     await import("atom-package-deps").then((atom_package_deps) => {
       atom_package_deps.install("atom-ide-template");
     });

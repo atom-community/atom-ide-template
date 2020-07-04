@@ -2,7 +2,7 @@
   "name": "atom-ide-template",
   "main": "dist/main.js",
   "version": "0.1.0",
-  "author": "Amin Yahyaabadi",
+  "author": "<Your Name>",
   "description": "  ",
   "keywords": [],
   "repository": "https://github.com/atom-ide-community/atom-ide-template",

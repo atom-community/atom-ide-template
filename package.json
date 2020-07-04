@@ -15,8 +15,9 @@
     "tsc": "tsc -p src/tsconfig.json || echo done",
     "dev": "npm run clean && env NODE_ENV=development env BABEL_ENV=production rollup -c -w",
     "build": "npm run clean && env NODE_ENV=production env BABEL_ENV=production rollup -c ",
-    "prepare": "npm run build",
-    "build-commit": "build-commit -o dist"
+    "build-commit": "build-commit -o dist",
+    "bump": "ncu -u",
+    "prepare": "npm run build"
   },
   "atomTestRunner": "./spec/runner",
   "activationHooks": [
@@ -30,11 +31,11 @@
     "atom-package-deps": "^6.0.0"
   },
   "devDependencies": {
+    "@types/atom": "latest",
+    "@types/node": "^13.11.1",
     "typescript": "^3.9.5",
     "tslib": "^2.0.0",
     "coffeescript": "^1.12.7",
-    "@types/atom": "latest",
-    "@types/node": "^13.11.1",
     "jasmine": "^3.5.0",
     "@types/jasmine": "^3.5.10",
     "atom-jasmine3-test-runner": "^4.4.4",
@@ -58,10 +59,10 @@
     "@rollup/plugin-json": "latest",
     "rollup-plugin-terser": "latest",
     "shx": "latest",
+    "npm-check-updates": "latest",
     "build-commit": "latest"
   },
   "providedServices": {},
   "consumedServices": {},
-  "package-deps": [
-  ]
+  "package-deps": []
 }

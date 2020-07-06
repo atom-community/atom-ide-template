@@ -58,6 +58,7 @@
     "rollup-plugin-coffee-script": "latest",
     "@rollup/plugin-json": "latest",
     "rollup-plugin-terser": "latest",
+    "rollup-plugin-auto-external": "latest",
     "shx": "latest",
     "npm-check-updates": "latest",
     "build-commit": "latest"

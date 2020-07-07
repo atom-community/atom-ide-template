@@ -13,8 +13,8 @@
     "test": "atom --test spec",
     "clean": "shx rm -rf dist",
     "tsc": "tsc -p src/tsconfig.json || echo done",
-    "dev": "npm run clean && env NODE_ENV=development env BABEL_ENV=production rollup -c -w",
-    "build": "npm run clean && env NODE_ENV=production env BABEL_ENV=production rollup -c ",
+    "dev": "npm run clean && cross-env NODE_ENV=development cross-env BABEL_ENV=production rollup -c -w",
+    "build": "npm run clean && cross-env NODE_ENV=production cross-env BABEL_ENV=production rollup -c ",
     "build-commit": "build-commit -o dist",
     "bump": "ncu -u",
     "prepare": "npm run build"
@@ -60,6 +60,7 @@
     "rollup-plugin-terser": "latest",
     "rollup-plugin-auto-external": "latest",
     "shx": "latest",
+    "cross-env": "latest",
     "npm-check-updates": "latest",
     "build-commit": "latest"
   },

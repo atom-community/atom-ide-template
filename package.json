@@ -33,7 +33,7 @@
   "devDependencies": {
     "@types/atom": "latest",
     "@types/node": "^13.11.1",
-    "typescript": "^3.9.5",
+    "typescript": "^3.9.6",
     "tslib": "^2.0.0",
     "coffeescript": "^1.12.7",
     "jasmine": "^3.5.0",

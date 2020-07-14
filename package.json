@@ -41,7 +41,7 @@
     "atom-jasmine3-test-runner": "^4.4.8",
     "prettier": "^2.0.5",
     "eslint": "7.4.0",
-    "@typescript-eslint/eslint-plugin": "3.6.0",
+    "@typescript-eslint/eslint-plugin": "3.6.1",
     "@typescript-eslint/parser": "3.6.1",
     "babel-eslint": "10.1.0",
     "eslint-plugin-coffee": "0.1.12",

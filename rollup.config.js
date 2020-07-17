@@ -1,12 +1,19 @@
-import { createPlugins, createConfig } from 'rollup-plugin-atomic'
+import { createPlugins } from "rollup-plugin-atomic";
 
-const plugins = createPlugins(['ts', 'js'], false) // babel is false
+const plugins = createPlugins(["ts", "js"], false); // babel is false
 
-const config = createConfig(
-	'src/main.ts',
-	'dist',
-	'cjs',
-	['atom'],
-	plugins)
-
-export default config
+export default [
+  {
+    input: "src/main.ts",
+    output: [
+      {
+        dir: "dist",
+        format: "cjs",
+        sourcemap: true,
+      },
+    ],
+    // loaded externally
+    external: ["atom"],
+    plugins: plugins,
+  },
+];

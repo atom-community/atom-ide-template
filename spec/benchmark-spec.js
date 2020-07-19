@@ -5,8 +5,12 @@ describe("Benchmark", () => {
     atom.packages.triggerDeferredActivationHooks();
     // Activate activation hook
     atom.packages.triggerActivationHook("core:loaded-shell-environment");
+
+    // For benchmark, activate the deps manually before loading the actual package:
+    const deps = [];
+    deps.forEach(async p => await atom.packages.activatePackage(p))
+
     // Activate the package
-    await atom.packages.activatePackage("atom-ide-markdown-service");
     measure("Activation Time", async function activationBenchmark() {
       await atom.packages.activatePackage("atom-ide-template");
     });

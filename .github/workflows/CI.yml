@@ -3,10 +3,6 @@ on:
   - push
   - pull_request
 
-defaults:
-  run:
-    shell: bash
-
 jobs:
   Test:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
@@ -29,15 +25,9 @@ jobs:
         run: apm -v
       - name: Install APM dependencies
         run: |
-          apm ci  # uses locked module. use `apm install` for non-locked
+          apm install
       - name: Atom Package dependencies
-        run: |
-          npm install array-to-txt-file
-          node -e 'const pkg = require("./package.json"); deps=Array.from(pkg["package-deps"]); const arrayToTxtFile = require("array-to-txt-file"); arrayToTxtFile(deps,"deps.txt", ()=>{});'
-          cat deps.txt | \
-          while read dep; do
-              apm install $dep
-          done
+        run: node ./script/install-package-deps.js
       - name: Run tests 👩🏾‍💻
         run: npm run test
 
@@ -48,8 +38,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: Commit lint ✨
-        uses: wagoid/commitlint-github-action@v1
+      # - name: Commit lint ✨
+      #   uses: wagoid/commitlint-github-action@v1
       - uses: actions/setup-node@v1
         with:
           node-version: "14.x"

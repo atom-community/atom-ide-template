@@ -23,15 +23,20 @@ async function package_deps() {
   // (to prevent loading atom-package-deps and package.json when the deps are already loaded)
   const deps: string[] = [];
   if (deps.some((p) => !atom.packages.isPackageLoaded(p))) {
-  await import("atom-package-deps").then((atom_package_deps) => {
-    // install if not installed
-    atom_package_deps.install("atom-ide-template-js", false);
-    // enable if disabled
-    deps.filter((p) => !atom.packages.isPackageLoaded(p)).forEach(p => {
-      atom.notifications.addInfo(`Enabling package ${p} that is needed for "atom-ide-template-js"`)
-      atom.packages.enablePackage(p)
-    })
-  });
+    await import("atom-package-deps").then((atom_package_deps) => {
+      // install if not installed
+      atom_package_deps.install("atom-ide-template-js", false);
+      // enable if disabled
+      deps
+        .filter((p) => !atom.packages.isPackageLoaded(p))
+        .forEach((p) => {
+          atom.notifications.addInfo(
+            `Enabling package ${p} that is needed for "atom-ide-template-js"`
+          );
+          atom.packages.enablePackage(p);
+        });
+    });
+  }
 }
 
 /**

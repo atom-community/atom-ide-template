@@ -22,5 +22,5 @@ export default createRunner({
     profile: true,
     set: false,
     unspy: false,
-  }
+  },
 });

@@ -7,8 +7,7 @@ describe("tests", () => {
     atom.packages.triggerDeferredActivationHooks();
     // Activate activation hook
     atom.packages.triggerActivationHook("core:loaded-shell-environment");
-    // Activate package-deps
-    await atom.packages.activatePackage("atom-ide-markdown-service");
+
     // Activate the package
     await atom.packages.activatePackage("atom-ide-template");
   });

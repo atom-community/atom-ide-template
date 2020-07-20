@@ -3,9 +3,9 @@ name: Bump_Dependencies
 on:
   schedule:
     - cron: "0 0 * * *"
-      
+
 jobs:
-  build:
+  Bump_Dependencies:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,8 +13,8 @@ jobs:
         with:
           node-version: '14'
       - run: |
-          npm install -g npm-check-updates
-          ncu "/^babel-.*$/"
+          npm ci
+          npm run bump
           npm install
       - uses: peter-evans/create-pull-request@v2
         with:
@@ -23,6 +23,3 @@ jobs:
           title: "[AUTO] Update dependencies"
           labels: Dependencies
           branch: "Bump"
-
-
-

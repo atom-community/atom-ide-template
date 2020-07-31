@@ -1,6 +1,6 @@
-import { CompositeDisposable } from "atom";
+import { CompositeDisposable } from "atom"
 
-let subscriptions: CompositeDisposable | null;
+let subscriptions: CompositeDisposable | null
 
 /**
  * called by Atom when activating an extension
@@ -8,11 +8,11 @@ let subscriptions: CompositeDisposable | null;
  */
 export function activate(state: any) {
   // Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
-  subscriptions = new CompositeDisposable();
+  subscriptions = new CompositeDisposable()
 
   package_deps().then(() => {
     // do package stuff here
-  });
+  })
 }
 
 /**
@@ -21,21 +21,19 @@ export function activate(state: any) {
 async function package_deps() {
   // Add entries from package-deps here manually
   // (to prevent loading atom-package-deps and package.json when the deps are already loaded)
-  const deps: string[] = [];
+  const deps: string[] = []
   if (deps.some((p) => !atom.packages.isPackageLoaded(p))) {
     await import("atom-package-deps").then((atom_package_deps) => {
       // install if not installed
-      atom_package_deps.install("atom-ide-template-js", false);
+      atom_package_deps.install("atom-ide-template-js", false)
       // enable if disabled
       deps
         .filter((p) => !atom.packages.isPackageLoaded(p))
         .forEach((p) => {
-          atom.notifications.addInfo(
-            `Enabling package ${p} that is needed for "atom-ide-template-js"`
-          );
-          atom.packages.enablePackage(p);
-        });
-    });
+          atom.notifications.addInfo(`Enabling package ${p} that is needed for "atom-ide-template-js"`)
+          atom.packages.enablePackage(p)
+        })
+    })
   }
 }
 
@@ -44,9 +42,9 @@ async function package_deps() {
  */
 export function deactivate() {
   if (subscriptions) {
-    subscriptions.dispose();
+    subscriptions.dispose()
   }
-  subscriptions = null;
+  subscriptions = null
 }
 
 /**
@@ -62,4 +60,4 @@ export const config = {
     type: "boolean", // 'number', 'string'
     default: true,
   },
-};
+}

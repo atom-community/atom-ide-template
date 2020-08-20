@@ -27,12 +27,11 @@
     "atom": ">=0.174.0 <2.0.0"
   },
   "dependencies": {
-    "etch": "^0.14.0",
     "atom-package-deps": "^6.0.0"
   },
   "devDependencies": {
     "@types/atom": "1.40.4",
-    "@types/node": "^14.0.27",
+    "@types/node": "^14.6.0",
     "typescript": "^3.9.7",
     "tslib": "^2.0.1",
     "coffeescript": "^1.12.7",
@@ -40,15 +39,15 @@
     "@types/jasmine": "^3.5.12",
     "atom-jasmine3-test-runner": "^5.0.5",
     "prettier": "^2.0.5",
-    "eslint": "7.6.0",
-    "eslint-config-atomic": "^1.3.0",
+    "eslint": "7.7.0",
+    "eslint-config-atomic": "^1.4.0",
     "tslint": "6.1.3",
     "tslint-config-prettier": "1.18.0",
-    "rollup": "2.23.1",
+    "rollup": "2.26.4",
     "rollup-plugin-atomic": "^1.2.0",
     "shx": "0.3.2",
     "cross-env": "7.0.2",
-    "npm-check-updates": "7.1.0",
+    "npm-check-updates": "7.1.1",
     "build-commit": "0.1.1"
   },
   "providedServices": {},

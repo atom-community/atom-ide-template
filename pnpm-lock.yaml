@@ -10,7 +10,6 @@ devDependencies:
   cross-env: 7.0.2
   eslint: 7.7.0
   eslint-config-atomic: 1.4.0_eslint@7.7.0
-  jasmine: 3.6.1
   npm-check-updates: 7.1.1
   prettier: 2.0.5
   rollup: 2.26.4
@@ -5564,7 +5563,6 @@ specifiers:
   cross-env: 7.0.2
   eslint: 7.7.0
   eslint-config-atomic: ^1.4.0
-  jasmine: ^3.6.1
   npm-check-updates: 7.1.1
   prettier: ^2.0.5
   rollup: 2.26.4

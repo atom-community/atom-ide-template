@@ -13,8 +13,8 @@
     "test": "atom --test spec",
     "clean": "shx rm -rf dist",
     "tsc": "tsc -p src/tsconfig.json || echo done",
-    "dev": "cross-env NODE_ENV=development cross-env BABEL_KEEP_MODULES=true parcel watch --target main src/main.ts",
-    "build": "cross-env NODE_ENV=production cross-env BABEL_KEEP_MODULES=true parcel build --target main src/main.ts",
+    "dev": "cross-env NODE_ENV=development parcel watch --target main src/main.ts",
+    "build": "cross-env NODE_ENV=production parcel build --target main src/main.ts",
     "build-commit": "build-commit -o dist",
     "bump": "ncu -u -x coffeescript",
     "prepare": "npm run build"

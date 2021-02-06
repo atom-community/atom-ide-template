@@ -1,14 +1,12 @@
 import { CompositeDisposable } from "atom"
 
-let subscriptions: CompositeDisposable | null
+// Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
+const subscriptions = new CompositeDisposable()
 
 /**
  * called by Atom when activating an extension
  */
 export function activate() {
-  // Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
-  subscriptions = new CompositeDisposable()
-
   package_deps().then(() => {
     // do package stuff here
   })
@@ -43,14 +41,15 @@ export function deactivate() {
   if (subscriptions) {
     subscriptions.dispose()
   }
-  subscriptions = null
 }
 
 /**
  * called by IDE extensions to retrieve the service for registration
  * @return the current instance
  */
-export function provideYourService() {}
+export function provideYourService() {
+  // your service
+}
 
 export const config = {
   doSomething: {

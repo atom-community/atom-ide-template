@@ -1,8 +1,5 @@
 node_modules
-package.json
-package-lock.json
 pnpm-lock.yaml
-changelog.md
-coverage
-build
+package-lock.json
+CHANGELOG.md
 dist

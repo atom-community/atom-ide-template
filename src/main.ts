@@ -3,18 +3,14 @@ import { CompositeDisposable } from "atom"
 // Events subscribed to in atom's system can be easily cleaned up with a CompositeDisposable
 const subscriptions = new CompositeDisposable()
 
-/**
- * called by Atom when activating an extension
- */
+/** Called by Atom when activating an extension */
 export function activate() {
   package_deps().then(() => {
     // do package stuff here
   })
 }
 
-/**
- * install Atom package dependencies if not already loaded
- */
+/** Install Atom package dependencies if not already loaded */
 async function package_deps() {
   // Add entries from package-deps here manually
   // (to prevent loading atom-package-deps and package.json when the deps are already loaded)
@@ -34,9 +30,7 @@ async function package_deps() {
   }
 }
 
-/**
- * called by Atom when deactivating an extension
- */
+/** Called by Atom when deactivating an extension */
 export function deactivate() {
   if (subscriptions) {
     subscriptions.dispose()
@@ -44,8 +38,9 @@ export function deactivate() {
 }
 
 /**
- * called by IDE extensions to retrieve the service for registration
- * @return the current instance
+ * Called by IDE extensions to retrieve the service for registration
+ *
+ * @returns The current instance
  */
 export function provideYourService() {
   // your service

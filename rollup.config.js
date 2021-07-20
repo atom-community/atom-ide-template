@@ -4,7 +4,7 @@ const plugins = createPlugins([
   "js",
   ["ts", { tsconfig: "./src/tsconfig.json" }, true],
   "json",
-  // "visutalizer"
+  // "visualizer"
 ])
 
 const RollupConfig = [

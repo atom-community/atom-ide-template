@@ -23,8 +23,7 @@ jobs:
       - uses: atom-community/action-setup-atom@v1
         with:
           channel: ${{ matrix.atom_channel }}
-      - name: Versions
-        run: apm -v
+
       - name: Install dependencies
         run: |
           apm install

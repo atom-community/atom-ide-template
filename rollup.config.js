@@ -1,6 +1,11 @@
 import { createPlugins } from "rollup-plugin-atomic"
 
-const plugins = createPlugins([["ts", { tsconfig: "./src/tsconfig.json" }, true], "js"])
+const plugins = createPlugins([
+  "js",
+  ["ts", { tsconfig: "./src/tsconfig.json" }, true],
+  "json",
+  // "visutalizer"
+])
 
 const RollupConfig = [
   {
@@ -9,11 +14,11 @@ const RollupConfig = [
       {
         dir: "dist",
         format: "cjs",
-        sourcemap: true,
+        sourcemap: process.env.NODE_ENV === "development" ? "inline" : true,
       },
     ],
     // loaded externally
-    external: ["atom"],
+    external: ["atom", "electron"],
     plugins,
   },
 ]

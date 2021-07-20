@@ -18,7 +18,9 @@ const RollupConfig = [
       },
     ],
     // loaded externally
-    external: ["atom", "electron"],
+    // these are built-in dependencies or
+    // the ones that many other packages use and are probably cached by Node
+    external: ["atom", "electron", "atom-package-deps"],
     plugins,
   },
 ]

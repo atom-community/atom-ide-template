@@ -1,6 +1,6 @@
 describe("Benchmark", () => {
   // This number doesn't match what timecope gives, but shows the trend
-  it("Activation Benchmark", async function () {
+  it("Activation Benchmark", function () {
     jasmine.attachToDOM(atom.views.getView(atom.workspace))
     atom.packages.triggerDeferredActivationHooks()
     // Activate activation hook
@@ -8,7 +8,7 @@ describe("Benchmark", () => {
 
     // For benchmark, activate the deps manually before loading the actual package:
     const deps = []
-    deps.forEach(async (p) => await atom.packages.activatePackage(p))
+    deps.forEach((p) => atom.packages.activatePackage(p))
 
     // Activate the package
     measure("Activation Time", async function activationBenchmark() {

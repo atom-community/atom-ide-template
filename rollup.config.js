@@ -2,7 +2,7 @@ import { createPlugins } from "rollup-plugin-atomic"
 
 const plugins = createPlugins([
   "js",
-  ["ts", { tsconfig: "./src/tsconfig.json" }, true],
+  ["ts", { tsconfig: "./src/tsconfig.json" }],
   "json",
   // "visualizer"
 ])
